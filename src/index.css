@@ -1,13 +1,96 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
+
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  background-color: hsl(218, 23%, 16%);
+  color: hsl(193, 38%, 86%);
+  margin: 0;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+.app {
+  background-color: hsl(217, 19%, 24%);
+  text-align: center;
+  width: 600px;
+  padding: 20px 75px 70px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.app .id-num{
+  color: hsl(150, 100%, 66%);
+  font-size: 16px;
+  letter-spacing: 5px;
+}
+
+.app p{
+  font-size: 28px;
+}
+
+.dice-div {
+  width: 65px;
+  height: 65px;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: hsl(150, 100%, 66%);
+  display: grid;
+  place-content: center;
+  position: absolute;
+  bottom: -32.5px;
+  left: calc(50% - 32.5px);
+  cursor: pointer;
+}
+
+.dice-div:hover{
+  box-shadow: 0 0 20px 0 hsl(150, 100%, 66%);
+}
+
+@media (max-device-width: 600px) {
+  *{
+    box-sizing: border-box;
+  }
+  .app{
+    width: 90vw;
+    padding: 20px 50px 130px;
+  }
+  .app .id-num{
+    font-size: 32px;
+  }
+  
+  .app p{
+    font-size: 64px;
+  }
+  .dice-div {
+    font-size: 48px;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    bottom: -75px;
+    left: calc(50% - 75px);
+  }
+  .dice-div svg{
+    transform: scale(2.5);
+  }
+}
+
+@media (max-width: 600px) {
+  .app{
+    width: 90vw;
+    margin: auto;
+    align-items: center;
+    padding: 20px 50px 70px;
+  }
+  .line-div{
+    display: grid;
+    place-content: center;
+  }
+  .line-div svg{
+    transform: scale(0.5);
+  }
 }
